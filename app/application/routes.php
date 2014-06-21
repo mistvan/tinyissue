@@ -11,7 +11,6 @@ Route::any('project/(:num)/issue/new', 'project.issue@new');
 Route::any('project/(:num)/issue/(:num)', 'project.issue@index');
 Route::any('project/(:num)/issue/(:num)/(:any)', 'project.issue@(:3)');
 
-
 Route::controller(array(
 	'home',
 	'project',
@@ -20,7 +19,9 @@ Route::controller(array(
 	'user',
 	'administration.users',
 	'administration',
-	'ajax.project'
+  'ajax.project',
+	'ajax.todo',
+	'todo'
 ));
 
 
@@ -60,6 +61,16 @@ View::composer('layouts.project', function($view)
 	}
 
 	$view->active = 'projects';
+});
+
+View::composer('todo.index', function($view)
+{
+	Asset::script('app', 'app/assets/js/todo.js', 'jquery');
+});
+
+View::composer('user.issues', function($view)
+{
+	Asset::script('app', 'app/assets/js/todo-issues.js', 'jquery');
 });
 
 View::composer('layouts.login', function($view)

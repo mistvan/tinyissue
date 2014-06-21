@@ -290,8 +290,10 @@ p{
 #header .logo{
 	width: 87px; height: 23px;
 	background: url('../images/layout/tinyissue.png') no-repeat;
-	text-indent: -99999999px !important;
+	text-indent: 100%;
 	position: absolute; top: 15px; left: 15px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 #header .nav-right{
 	float: right;
@@ -343,6 +345,9 @@ p{
 #header .nav li.issues a{
 	background: url('../images/layout/icon-issues_inactive.png') no-repeat 0 0;
 }
+#header .nav li.todo a{
+	background: url('../images/layout/icon-todo_inactive.png') no-repeat 0 0;
+}
 #header .nav li.settings a{
 	background: url('../images/layout/icon-settings_inactive.png') no-repeat 0 0;
 }
@@ -351,6 +356,9 @@ p{
 }
 #header .nav li.issues.active a{
 	background: url('../images/layout/icon-issues.png') no-repeat 0 0;
+}
+#header .nav li.todo.active a{
+	background: url('../images/layout/icon-todo.png') no-repeat 0 0;
 }
 #header .nav li.projects.active a{
 	background: url('../images/layout/icon-projects.png') no-repeat 0 0;
@@ -814,3 +822,60 @@ p{
 .table th{
 	font-weight: bold;
 }
+
+/* ToDo items */
+.todo-button {
+  float: right; 
+  width: 26px;
+  height: 26px;
+  display: block;
+  text-indent: -999999px;
+}
+
+.todo-button.add {
+  background: url("../images/layout/icon-bigadd.png") no-repeat scroll 0% 0% transparent;
+}
+
+.todo-button.del {
+  background: url("../images/layout/icon-delete.png") no-repeat scroll center center transparent;
+}
+.todo-lane {
+  float: left;
+  margin-right: 10px; 
+  border: 2px solid #D4EFFF;
+}
+
+#lane-status-0 {
+  float: right; 
+  margin-right: 0; 
+}
+
+.todo-list-item {
+  background-color: #fff;
+  width: 100%;
+  display: table;
+  margin-bottom: 15px;
+  border: 1px solid #DBD9D9;
+  border-radius: 5px;
+}
+
+.todo-list-item span {
+  color: #ACACAC;
+  font-weight: bold;
+}
+
+.todo-list-item-inner {
+  height: 4em;
+  padding: 0 5px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.todo-state-active {
+  border: 2px solid green;
+}
+
+.todo-state-hover {
+  border: 2px solid orange;
+}
+
